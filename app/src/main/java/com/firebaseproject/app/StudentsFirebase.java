@@ -1,13 +1,13 @@
 package com.firebaseproject.app;
 
-public class Products {
+public class StudentsFirebase {
     private String studentId,name,surname,fatherName,nationalId,dob,gender;
 
 
-    public Products() {
+    public StudentsFirebase() {
     }
 
-    public Products(String studentId, String name, String surname, String fatherName, String nationalId, String dob, String gender) {
+    public StudentsFirebase(String studentId, String name, String surname, String fatherName, String nationalId, String dob, String gender) {
         this.studentId = studentId;
         this.name = name;
         this.surname = surname;

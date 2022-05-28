@@ -86,7 +86,7 @@ public class EditStudentFirebaseActivity extends AppCompatActivity {
                 if(!TextUtils.isEmpty(studentIdEditTxt.getText().toString())&&!TextUtils.isEmpty(nameTxt.getText().toString())&&!TextUtils.isEmpty(nationalIdEditTxt.getText().toString())){
 
                     //add product to database
-                    Products items = new Products(studentIdEditTxt.getText().toString(), nameTxt.getText().toString(),surnameEditTxt.getText().toString(),fatherNameEditTxt.getText().toString(),nationalIdEditTxt.getText().toString(),dobEditTxt.getText().toString(),genderEditTxt.getText().toString());
+                    StudentsFirebase items = new StudentsFirebase(studentIdEditTxt.getText().toString(), nameTxt.getText().toString(),surnameEditTxt.getText().toString(),fatherNameEditTxt.getText().toString(),nationalIdEditTxt.getText().toString(),dobEditTxt.getText().toString(),genderEditTxt.getText().toString());
                     databaseReference.child("students").child(studentIdEditTxt.getText().toString()).setValue(items);
 
                     Toast.makeText(EditStudentFirebaseActivity.this," Added",Toast.LENGTH_SHORT).show();

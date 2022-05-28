@@ -90,14 +90,12 @@ public class WeatherActivity extends AppCompatActivity {
                         String countryName = jsonObjectSys.getString("country");
                         String cityName = jsonResponse.getString("name");
                         tvResult.setTextColor(Color.rgb(68,134,199));
+
+
                         output += "Current weather of " + cityName + " (" + countryName + ")"
                                 + "\n Temp: " + df.format(temp) + " °C"
-                                + "\n Feels Like: " + df.format(feelsLike) + " °C"
                                 + "\n Humidity: " + humidity + "%"
-                                + "\n Description: " + description
-                                + "\n Wind Speed: " + wind + "m/s (meters per second)"
-                                + "\n Cloudiness: " + clouds + "%"
-                                + "\n Pressure: " + pressure + " hPa";
+                                + "\n Cloudiness: " + clouds + "%";
 
 
                         // Including the weather image created from the icon - use glide for this

@@ -75,12 +75,12 @@ public class AllStudentsFirebaseActivity extends AppCompatActivity {
 
 
         //firebase recyclerview
-        FirebaseRecyclerOptions<Products> options =
-                new FirebaseRecyclerOptions.Builder<Products>()
-                        .setQuery(firebaseSearchQuery, Products.class)
+        FirebaseRecyclerOptions<StudentsFirebase> options =
+                new FirebaseRecyclerOptions.Builder<StudentsFirebase>()
+                        .setQuery(firebaseSearchQuery, StudentsFirebase.class)
                         .build();
 
-        FirebaseRecyclerAdapter firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Products, UsersViewHolder>(options) {
+        FirebaseRecyclerAdapter firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<StudentsFirebase, UsersViewHolder>(options) {
             @NonNull
             @Override
             public UsersViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -92,7 +92,7 @@ public class AllStudentsFirebaseActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onBindViewHolder(UsersViewHolder holder, int position, Products model) {
+            protected void onBindViewHolder(UsersViewHolder holder, int position, StudentsFirebase model) {
 
                 holder.nameTxt.setText(model.getName());
                 holder.surnameTxt.setText(model.getSurname());
@@ -139,12 +139,12 @@ public class AllStudentsFirebaseActivity extends AppCompatActivity {
 
 
 
-        FirebaseRecyclerOptions<Products> options =
-                new FirebaseRecyclerOptions.Builder<Products>()
-                        .setQuery(firebaseSearchQuery, Products.class)
+        FirebaseRecyclerOptions<StudentsFirebase> options =
+                new FirebaseRecyclerOptions.Builder<StudentsFirebase>()
+                        .setQuery(firebaseSearchQuery, StudentsFirebase.class)
                         .build();
 
-        FirebaseRecyclerAdapter firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Products, UsersViewHolder>(options) {
+        FirebaseRecyclerAdapter firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<StudentsFirebase, UsersViewHolder>(options) {
             @NonNull
             @Override
             public UsersViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -156,7 +156,7 @@ public class AllStudentsFirebaseActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onBindViewHolder(UsersViewHolder holder, int position, Products model) {
+            protected void onBindViewHolder(UsersViewHolder holder, int position, StudentsFirebase model) {
 
 
                 holder.nameTxt.setText(model.getName());
