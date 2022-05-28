@@ -35,7 +35,7 @@ import java.text.DecimalFormat;
 
 public class AddStudentFirebaseActivity extends AppCompatActivity {
 
-//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
+//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
     private FirebaseAuth firebaseAuth;
     Button  additemtodatabase;
     DatabaseReference databaseReference;
