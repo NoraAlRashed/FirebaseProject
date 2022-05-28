@@ -6,18 +6,15 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 
-public class EditProductActivity extends AppCompatActivity {
+public class EditStudentFirebaseActivity extends AppCompatActivity {
 
 
     Button save;
@@ -30,7 +27,7 @@ public class EditProductActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_product);
+        setContentView(R.layout.activity_edit_student_firebase);
 
         //Top action bar
         ActionBar a = getSupportActionBar();
@@ -40,6 +37,9 @@ public class EditProductActivity extends AppCompatActivity {
 
         //init Views
         save =findViewById(R.id.save);
+
+        studentIdEditTxt= (EditText) findViewById(R.id.studentIdEditTxt);
+
         nameTxt= (EditText) findViewById(R.id.nameEditTxt);
         surnameEditTxt= (EditText) findViewById(R.id.surnameEditTxt);
         fatherNameEditTxt= (EditText) findViewById(R.id.fatherNameEditTxt);
@@ -73,11 +73,8 @@ public class EditProductActivity extends AppCompatActivity {
 
 
         //Database Reference
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        //get current user email
-        String finaluser= FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        String resultemail = finaluser.replace(".","");
 
 
         save.setOnClickListener(new View.OnClickListener() {
@@ -90,12 +87,13 @@ public class EditProductActivity extends AppCompatActivity {
 
                     //add product to database
                     Products items = new Products(studentIdEditTxt.getText().toString(), nameTxt.getText().toString(),surnameEditTxt.getText().toString(),fatherNameEditTxt.getText().toString(),nationalIdEditTxt.getText().toString(),dobEditTxt.getText().toString(),genderEditTxt.getText().toString());
-                    databaseReference.child("Students").child(studentIdEditTxt.getText().toString()).setValue(items);
+                    databaseReference.child("students").child(studentIdEditTxt.getText().toString()).setValue(items);
 
-                    Toast.makeText(EditProductActivity.this," Added",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditStudentFirebaseActivity.this," Added",Toast.LENGTH_SHORT).show();
+
                 }
                 else {
-                    Toast.makeText(EditProductActivity.this,"Please Fill all the fields",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditStudentFirebaseActivity.this,"Please Fill all the fields",Toast.LENGTH_SHORT).show();
                 }
             }
         });

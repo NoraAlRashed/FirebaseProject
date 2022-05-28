@@ -16,21 +16,20 @@
         android:layout_height="match_parent">
 
 
-
         <TextView
             android:id="@+id/profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_below="@+id/image"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
             android:text="Add Student"
+            android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_below="@+id/image"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:textColor="#F4C4D5"
+            android:textStyle="bold" />
 
 
 
@@ -43,7 +42,8 @@
             android:paddingLeft="15dp"
             android:hint="studentId"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_below="@+id/profile" />
+            android:layout_below="@+id/profile"
+            />
 
         <EditText
             android:id="@+id/nameEditTxt"
@@ -99,6 +99,7 @@
             android:layout_alignParentLeft="true"
             android:paddingLeft="15dp"
             android:hint="gender"
+
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_below="@+id/profile" />
 
@@ -117,15 +118,15 @@
                 android:layout_alignParentStart="true">
 
                 <Button
+                    android:id="@+id/saveBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:padding="5dp"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:background="#F4C4D5"
                     android:gravity="center_vertical|center_horizontal"
+                    android:padding="5dp"
                     android:text="Save"
 
-                    android:id="@+id/saveBtn" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

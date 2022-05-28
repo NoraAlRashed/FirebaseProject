@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-
+//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
 
 public class DBAdapter {
     Context c;
@@ -52,15 +52,15 @@ public class DBAdapter {
         try
         {
             ContentValues cv=new ContentValues();
-            cv.put(Contants.STUDENTID,studentId);
-            cv.put(Contants.NAME, name);
-            cv.put(Contants.SURNAME, surname);
-            cv.put(Contants.FATHERNAME, fatherName);
-            cv.put(Contants.NATIONALID, nationalId);
-            cv.put(Contants.DOB, dob);
-            cv.put(Contants.GENDER, gender);
+            cv.put(Students.STUDENTID,studentId);
+            cv.put(Students.NAME, name);
+            cv.put(Students.SURNAME, surname);
+            cv.put(Students.FATHERNAME, fatherName);
+            cv.put(Students.NATIONALID, nationalId);
+            cv.put(Students.DOB, dob);
+            cv.put(Students.GENDER, gender);
 
-            return db.insert(Contants.TB_NAME,Contants.ROW_ID,cv);
+            return db.insert(Students.TB_NAME, Students.ROW_ID,cv);
 
         }catch (SQLException e)
         {
@@ -74,9 +74,9 @@ public class DBAdapter {
     //RETRIEVE ALL PLAYERS
     public Cursor getAllPlayers()
     {
-        String[] columns={Contants.ROW_ID,Contants.STUDENTID,Contants.NAME,Contants.SURNAME,Contants.FATHERNAME,Contants.NATIONALID,Contants.DOB,Contants.GENDER};
+        String[] columns={Students.ROW_ID, Students.STUDENTID, Students.NAME, Students.SURNAME, Students.FATHERNAME, Students.NATIONALID, Students.DOB, Students.GENDER};
 
-        return db.query(Contants.TB_NAME,columns,null,null,null,null,null);
+        return db.query(Students.TB_NAME,columns,null,null,null,null,null);
     }
 
     //UPDATE
@@ -85,15 +85,15 @@ public class DBAdapter {
         try
         {
             ContentValues cv=new ContentValues();
-            cv.put(Contants.STUDENTID,studentId);
-            cv.put(Contants.NAME, name);
-            cv.put(Contants.SURNAME, surname);
-            cv.put(Contants.FATHERNAME, fatherName);
-            cv.put(Contants.NATIONALID, nationalId);
-            cv.put(Contants.DOB, dob);
-            cv.put(Contants.GENDER, gender);
+            cv.put(Students.STUDENTID,studentId);
+            cv.put(Students.NAME, name);
+            cv.put(Students.SURNAME, surname);
+            cv.put(Students.FATHERNAME, fatherName);
+            cv.put(Students.NATIONALID, nationalId);
+            cv.put(Students.DOB, dob);
+            cv.put(Students.GENDER, gender);
 
-            return db.update(Contants.TB_NAME,cv,Contants.ROW_ID+" =?",new String[]{String.valueOf(id)});
+            return db.update(Students.TB_NAME,cv, Students.ROW_ID+" =?",new String[]{String.valueOf(id)});
 
         }catch (SQLException e)
         {
@@ -110,7 +110,7 @@ public class DBAdapter {
         try
         {
 
-            return db.delete(Contants.TB_NAME,Contants.ROW_ID+" =?",new String[]{String.valueOf(id)});
+            return db.delete(Students.TB_NAME, Students.ROW_ID+" =?",new String[]{String.valueOf(id)});
 
         }catch (SQLException e)
         {

@@ -4,6 +4,9 @@ public class Products {
     private String studentId,name,surname,fatherName,nationalId,dob,gender;
 
 
+    public Products() {
+    }
+
     public Products(String studentId, String name, String surname, String fatherName, String nationalId, String dob, String gender) {
         this.studentId = studentId;
         this.name = name;

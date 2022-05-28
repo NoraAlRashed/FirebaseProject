@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeleteProductsActivity"
     android:orientation="vertical"
     android:background="#fff"
     >
@@ -25,8 +24,9 @@
             android:layout_width="@dimen/_70sdp"
             android:layout_height="@dimen/_70sdp"
             android:layout_margin="@dimen/_5sdp"
-            app:tint="@color/colorPrimary"
-            android:src="@drawable/ic_baseline_delete_24" />
+            android:backgroundTint="#F4C4D5"
+            android:src="@drawable/ic_baseline_delete_24"
+            app:tint="@color/colorPrimary" />
 
 
     </androidx.cardview.widget.CardView>
@@ -40,7 +40,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_50sdp"
         android:gravity="center"
-        android:text="Scan Bar/Qr Code to Delete"
+        android:text="Enter StudentID to delete"
         android:textColor="#000000"
         android:textSize="@dimen/_12sdp"
         android:textStyle="bold" />
@@ -58,35 +58,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="325dp"
-            android:text="Product to Delete:"
-            android:textColor="@color/colorPrimary"
+            android:text="Student Id"
+            android:textAlignment="center"
+            android:textColor="#F4C4D5"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/barcodedelete"
+        <EditText
+            android:id="@+id/studentid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView"
             android:ems="10"
-            android:hint="Code Number"
+            android:hint="Student Id"
             android:inputType="textPersonName"
             android:textColor="#000000"
             android:textColorHint="#000000" />
 
-        <Button
-            android:id="@+id/buttonscandelete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:background="@drawable/button"
-
-
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Scan Bar/QR Code"
-            android:textStyle="italic" />
 
         <Button
             android:id="@+id/deleteItemToTheDatabasebtn"
@@ -94,12 +82,12 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/buttonscandelete"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/btn_red"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="#F4C4D5"
 
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Delete Item" />
+            android:text="Delete Student" />
     </LinearLayout>
 
 

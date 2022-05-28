@@ -10,9 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.squareup.picasso.Picasso;
-
-public class ViewProductActivity extends AppCompatActivity {
+public class ViewStudentFirebaseActivity extends AppCompatActivity {
 
     ImageView image;
     Button edit;
@@ -22,7 +20,7 @@ public class ViewProductActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_product);
+        setContentView(R.layout.activity_view_student_firebase);
 
 
         //Top action bar
@@ -76,7 +74,7 @@ public class ViewProductActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //Intent to move to next activity
-                Intent intent = new Intent(getApplicationContext(),EditProductActivity.class);
+                Intent intent = new Intent(getApplicationContext(), EditStudentFirebaseActivity.class);
                 intent.putExtra("studentId",studentId);
                 intent.putExtra("name",name);
                 intent.putExtra("surname",surname);
@@ -85,6 +83,8 @@ public class ViewProductActivity extends AppCompatActivity {
                 intent.putExtra("dob",dob);
                 intent.putExtra("gender",gender);
                 startActivity(intent);
+                finish();
+
             }
         });
 

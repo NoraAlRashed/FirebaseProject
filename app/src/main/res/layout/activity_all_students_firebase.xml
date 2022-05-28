@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AllProductsActivity"
+    tools:context=".AllStudentsFirebaseActivity"
     android:orientation="vertical"
     >
 
@@ -43,7 +43,7 @@
 
                     android:background="#00FFFFFF"
                     android:ems="10"
-                    android:hint="Search Items"
+                    android:hint="Search StudentId"
                     android:inputType="textPersonName"
                     android:padding="@dimen/_8sdp"
                     android:textAlignment="center"

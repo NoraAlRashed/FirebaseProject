@@ -1,14 +1,11 @@
 package com.firebaseproject.app;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,14 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.makeramen.roundedimageview.RoundedImageView;
-import com.squareup.picasso.Picasso;
 
-public class AllProductsActivity extends AppCompatActivity {
+public class AllStudentsFirebaseActivity extends AppCompatActivity {
     public static EditText resultsearcheview;
     private FirebaseAuth firebaseAuth;
     ImageView searchbtn;
@@ -37,7 +31,7 @@ public class AllProductsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_products);
+        setContentView(R.layout.activity_all_students_firebase);
 
         //Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance();
@@ -111,7 +105,7 @@ public class AllProductsActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        Intent i=new Intent(AllProductsActivity.this,ViewProductActivity.class);
+                        Intent i=new Intent(AllStudentsFirebaseActivity.this, ViewStudentFirebaseActivity.class);
 
                         //LOAD DATA
                         i.putExtra("studentId",model.getStudentId());
@@ -124,6 +118,7 @@ public class AllProductsActivity extends AppCompatActivity {
 
                         //START ACTIVITY
                         startActivity(i);
+
 
                     }
                 });
@@ -174,7 +169,7 @@ public class AllProductsActivity extends AppCompatActivity {
                 holder.card.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i=new Intent(AllProductsActivity.this,ViewProductActivity.class);
+                        Intent i=new Intent(AllStudentsFirebaseActivity.this, ViewStudentFirebaseActivity.class);
 
                         //LOAD DATA
                         i.putExtra("studentId",model.getStudentId());

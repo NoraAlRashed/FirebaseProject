@@ -7,19 +7,7 @@
     android:fitsSystemWindows="true"
     tools:context=".DetailActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-             />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_detail" />
 
@@ -29,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_input_add" />
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="#F4C4D5" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

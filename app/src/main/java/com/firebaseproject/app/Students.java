@@ -1,7 +1,7 @@
 package com.firebaseproject.app;
 
 
-public class Contants {
+public class Students {
     //COLUMNS
     static final String ROW_ID="id";
     static final String STUDENTID = "studentId";

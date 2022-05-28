@@ -33,8 +33,7 @@ public class SQliteViewAllStudentsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sqlite_all_students);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -45,94 +44,23 @@ public class SQliteViewAllStudentsActivity extends AppCompatActivity {
             }
         });
 
-        //recycler
-        rv= (RecyclerView) findViewById(R.id.myRecycler);
 
-        //SET ITS PROPS
+        rv= (RecyclerView) findViewById(R.id.recyclerViews);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        rv.setLayoutManager(manager);
+        rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        rv.setItemAnimator(new DefaultItemAnimator());
 
-        //ADAPTER
+
+
         adapter=new MyAdapter(this, students);
 
         retrieve();
 
     }
 
-    private void showDialog()
-    {
-        Dialog d=new Dialog(this);
-
-        //NO TITLE
-        d.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 
-        //layout of dialog
-        d.setContentView(R.layout.custom_layout);
-
-        studentIdEditTxt= (EditText) d.findViewById(R.id.studentIdEditTxt);
-
-        nameTxt= (EditText) d.findViewById(R.id.nameEditTxt);
-        surnameEditTxt= (EditText) d.findViewById(R.id.surnameEditTxt);
-        fatherNameEditTxt= (EditText) d.findViewById(R.id.fatherNameEditTxt);
-        nationalIdEditTxt= (EditText) d.findViewById(R.id.nationalIdEditTxt);
-        dobEditTxt= (EditText) d.findViewById(R.id.dobEditTxt);
-        genderEditTxt= (EditText) d.findViewById(R.id.genderEditTxt);
-
-        Button savebtn= (Button) d.findViewById(R.id.saveBtn);
-        Button retrieveBtn= (Button) d.findViewById(R.id.retrieveBtn);
-
-        //ONCLICK LISTENERS
-        savebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               save(studentIdEditTxt.getText().toString(), nameTxt.getText().toString(),surnameEditTxt.getText().toString(),fatherNameEditTxt.getText().toString(),nationalIdEditTxt.getText().toString(),dobEditTxt.getText().toString(),genderEditTxt.getText().toString());
-            }
-        });
-
-        retrieveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                retrieve();
-            }
-        });
-
-        //SHOW DIALOG
-        d.show();
-    }
-
-    //SAVE
-    private void save(String studentId,String name,String surname,String fatherName,String nationalId,String dob,String gender) {
-        DBAdapter db=new DBAdapter(this);
-        //OPEN
-        db.openDB();
-
-        //INSERT
-        long result=db.add(studentId,name,surname,fatherName,nationalId,dob,gender);
-
-        if(result>0)
-        {
-            studentIdEditTxt.setText("");
-            nameTxt.setText("");
-            surnameEditTxt.setText("");
-            fatherNameEditTxt.setText("");
-            nationalIdEditTxt.setText("");
-            dobEditTxt.setText("");
-            genderEditTxt.setText("");
-
-
-        }else
-        {
-            Snackbar.make(nameTxt,"Unable To Insert",Snackbar.LENGTH_SHORT).show();
-        }
-
-        //CLOSE
-        db.close();
-
-        //refresh
-        retrieve();
-
-    }
 
     //RETRIEVE
     private void retrieve()
